@@ -1,5 +1,6 @@
 from django.db import models
-from django.core.validators import MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.conf import settings
 
 
 class Book(models.Model):
@@ -14,6 +15,20 @@ class Book(models.Model):
 
     class Meta:
         db_table = "book"
+
+    def __str__(self):
+        return self.title
+
+class Review(models.Model):
+    title = models.CharField(max_length = 45)
+    teste = models.CharField(max_length = 45)
+    content = models.CharField(max_length = 200)
+    UserId = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, db_column="UserId")
+    BookId = models.ForeignKey(Book, on_delete=models.CASCADE, db_column="BookId")
+    rating = models.FloatField(validators = [MinValueValidator(1),MaxValueValidator(5)])
+
+    class Meta:
+        db_table = "review"
 
     def __str__(self):
         return self.title

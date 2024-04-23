@@ -1,0 +1,84 @@
+    html,
+    body {
+        width: 1366px;
+        height: 100vh;
+        background-image: url("image 1(2).jpg");
+        background-position: center;
+        color: #FFFFFF;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+
+    .header_style img{
+        width: 125px;
+        height: 65px;
+        margin-right: 500px;
+    }
+    .header_style span{
+        margin-top: 15px;
+        margin-left: 100px;
+        -webkit-text-stroke: 0.3px black;
+        
+    }
+    .header_style{
+        font-size: 24px;
+        margin-left: 35px;
+        width: 1296px;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #FFD700;
+    }
+       
+
+    .user_card {
+        max-width: 420px;
+        width: 420px;
+        height: 500px;
+        display: inline-block;
+        margin-left: 35px;
+    }   
+    .justifyTitle {
+        margin-top: 85px;
+        margin-bottom: 50px;
+        width: 420px;
+        height: 64px;
+    }   
+    #form-title {
+        font-size: 48px;
+    }   
+    .input-group input[type="text"],
+    .input-group input[type="password"] {
+        background-color: transparent;
+        margin-bottom: 50px;
+        width: 420px;
+        height: 64px;
+        border: 1px solid #FFD700;
+        border-radius: 10px;
+        color: #FFFFFF; 
+    }       
+    .input-group input[type="text"]::selection,
+    .input-group input[type="password"]::selection {
+        background-color: transparent;            
+        color: #FFFFFF;
+    }
+
+    .loginClick {
+        margin-top: -30px;
+        display: inline-block;
+        width: 420px;
+        height: 64px;
+    }   
+    .loginClick label {
+        margin-left: 200px;
+    }   
+    .loginClick input[type="submit"] {
+        background-color: transparent;
+        border: none;
+        width: 420px;
+        height: 64px;
+        font-size: 24px;
+        color: #FFFFFF; 
+    }   
+    form {
+        font-size: 20px;
+    }

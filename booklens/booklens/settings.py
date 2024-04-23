@@ -78,9 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "booklens",
-        "USER": "Cherozo",
-        "PASSWORD": "WxVSKQgXQJQjvreSpgj9",
-        "HOST" : "127.0.0.1",
+        "USER": "root",
+        "PASSWORD": "PbdBuaAr2WdQhA4AlfbR",
+        "HOST" : "localhost",
         "PORT" : "3306",
         'OPTIONS' : {
             'charset' : 'utf8mb4',
