@@ -1,0 +1,19 @@
+<!-- form_receita.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+</head>
+<body>
+    <h1>Review</h1>
+    <form method="post">
+        {% csrf_token %}
+    <!-- form.as.p está puxando os campos no arquivo forms.py  -->
+        {{ form.as_p }}
+        <button type="submit">Salvar Review</button>
+    </form>
+</body>
+</html>

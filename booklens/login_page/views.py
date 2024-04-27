@@ -3,7 +3,9 @@ from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from django.contrib.auth import login as login_django
 from django.contrib.auth.decorators import login_required
-
+from django.shortcuts import render, redirect
+from .forms import ReviewForm
+from .models import Review
 
 @login_required(login_url="login")
 def homepage(request):    
@@ -29,3 +31,15 @@ def login(request):
             return redirect("index")
         else:
             return HttpResponse("Email ou senha inválido")
+        
+
+
+def criar_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('sucesso')
+    else:
+        form = ReviewForm()
+    return render(request, 'login_page/criar_review.html', {'form': form})

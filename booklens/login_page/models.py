@@ -9,7 +9,7 @@ class Book(models.Model):
     publisher = models.CharField(max_length=65, null=True, blank=True)
     publication_year = models.PositiveSmallIntegerField(
         null=True, blank=True, validators=[MaxValueValidator(9999)]
-    )
+    )   
     genre = models.CharField(max_length=65, null=True, blank=True)
     cover_image_path = models.CharField(max_length=100, null=True, blank=True)
 
@@ -21,7 +21,6 @@ class Book(models.Model):
 
 class Review(models.Model):
     title = models.CharField(max_length = 45)
-    teste = models.CharField(max_length = 45)
     content = models.CharField(max_length = 200)
     UserId = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, db_column="UserId")
     BookId = models.ForeignKey(Book, on_delete=models.CASCADE, db_column="BookId")
