@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
-from django.http import HttpResponse
 from django.contrib.auth import login as login_django
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .forms import ReviewForm
 from .models import Review
 
@@ -33,12 +32,14 @@ def login(request):
             return HttpResponse("Email ou senha inválido")
         
 
-
+@login_required
 def criar_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            form.save()
+            review = form.save(commit=False)
+            review.UserId = request.user
+            review.save()
             return HttpResponse('sucesso')
     else:
         form = ReviewForm()
